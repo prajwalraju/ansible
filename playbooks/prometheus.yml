@@ -1,0 +1,17 @@
+
+- name: Create the prometheus Docker container
+  community.docker.docker_container:
+    name: prometheus
+    image: prom/prometheus
+    restart_policy: always
+    ports:
+      - "9090:9090"
+    
+    volumes:
+      - "/home/prajwal/dockerCompose/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro"
+      - "/home/prajwal/dockerCompose/prometheus/data:/prometheus"
+
+    command: "--config.file=/etc/prometheus/prometheus.yaml"
+
+    networks:
+      - name: dockerNetwork 

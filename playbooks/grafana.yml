@@ -1,0 +1,16 @@
+
+- name: Create the grafana Docker container
+  community.docker.docker_container:
+    name: grafana
+    image: grafana/grafana
+    restart_policy: always
+    ports:
+      - "3030:3000"
+    
+    volumes:
+      - "/home/prajwal/dockerCompose/grafana:/var/lib/grafana"
+
+    networks:
+      - name: dockerNetwork 
+
+

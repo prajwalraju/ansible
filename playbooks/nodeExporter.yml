@@ -1,0 +1,11 @@
+- name: Create the local system metrics exporting Docker container
+  community.docker.docker_container:
+    name: node-exporter
+    image: prom/node-exporter
+    restart_policy: always
+    ports:
+      - "9100:9100"
+    volumes:
+      - "/home/prajwal/dockerCompose/homerDashboard:/www/assets"
+    networks:
+      - name: dockerNetwork 

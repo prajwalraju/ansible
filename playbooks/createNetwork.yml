@@ -1,0 +1,3 @@
+- name: Create a network for docker containers
+  community.docker.docker_network:
+    name: dockerNetwork 
