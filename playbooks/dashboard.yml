@@ -1,23 +1,23 @@
 - name: Create the Homer Dashboard Docker container
   community.docker.docker_container:
-    # name: homerDashboard
-    # image: b4bz/homer
-    # restart_policy: always
-    # ports:
-    #   - "8080:8080"
-    # volumes:
-    #   - "/home/prajwal/dockerCompose/homerDashboard:/www/assets"
-    # networks:
-    #   - name: dockerNetwork 
-
-    name: homerDashboardHomarr
-    image: ghcr.io/ajnart/homarr
+    name: homerDashboard
+    image: b4bz/homer
     restart_policy: always
     ports:
-      - "8080:7575"
+      - "8080:8080"
     volumes:
-      - "/home/prajwal/dockerCompose/homarr/configs:/app/data/configs"
-      - "/home/prajwal/dockerCompose/homarr/icons:/app/public/icons"
-    
+      - "/home/prajwal/dockerCompose/homerDashboard:/www/assets"
     networks:
       - name: dockerNetwork 
+
+    # name: homerDashboardHomarr
+    # image: ghcr.io/ajnart/homarr
+    # restart_policy: always
+    # ports:
+    #   - "8080:7575"
+    # volumes:
+    #   - "/home/prajwal/dockerCompose/homarr/configs:/app/data/configs"
+    #   - "/home/prajwal/dockerCompose/homarr/icons:/app/public/icons"
+    
+    # networks:
+    #   - name: dockerNetwork 

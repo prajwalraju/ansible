@@ -1,0 +1,12 @@
+- hosts: all
+  # gather_facts: no
+  # become: yes
+
+  tasks:
+    - import_tasks: playbooks/createNetwork.yml
+    - import_tasks: playbooks/adguard.yml
+    # - import_tasks: playbooks/pihole.yml
+    - import_tasks: playbooks/grafana.yml
+    - import_tasks: playbooks/prometheus.yml
+    - import_tasks: playbooks/dashboard.yml
+    - import_tasks: playbooks/photoprism.yml
